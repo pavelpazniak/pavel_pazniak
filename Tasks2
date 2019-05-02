@@ -1,0 +1,65 @@
+1.
+2.
+import java.util.Arrays;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		int[] nums = { 2, 7, 8, 16, 9, 1, 6 };
+		int[] results;
+		results = metod(nums);
+		printResult(results);
+
+	}
+
+	public static int[] metod(int[] nums) {
+		for (int i = 0; i < nums.length; i++) {
+			int min = nums[i];
+			int min_index = i;
+			for (int j = i + 1; j < nums.length; j++) {
+				if (nums[j] < min) {
+					min = nums[j];
+					min_index = j;
+				}
+			}
+			if (i != min_index) {
+				int a = nums[i];
+				nums[i] = nums[min_index];
+				nums[min_index] = a;
+			}
+		}
+		return nums;
+	}
+
+	public static void printResult(int[] results) {
+		System.out.println(Arrays.toString(results));
+	}
+}
+3.
+import java.util.Arrays;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		int[] nums = { 2, 7, 8, 16, 9, 1, 6 };
+		int[] results;
+		results = metod(nums);
+		printResult(results);
+
+	}
+
+	public static int[] metod(int[] nums) {
+		for (int i = 1; i < nums.length; i++)
+			for (int j = i; j > 0; j--) {
+				if (nums[j - 1] > nums[j]) {
+					int temp = nums[j];
+					nums[j] = nums[j - 1];
+					nums[j - 1] = temp;
+				}
+			}
+
+		return nums;
+	}
+
+	public static void printResult(int[] results) {
+		System.out.println(Arrays.toString(results));
+	}
+}
