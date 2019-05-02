@@ -4,6 +4,39 @@ import java.util.Arrays;
 
 public class HelloWorld {
 	public static void main(String[] args) {
+		int[] nums = { 200, 7, 8, 16, 9, 1, 6 };
+		int[] results;
+		results = metod(nums);
+		printResult(results);
+
+	}
+
+	public static int[] metod(int[] nums) {
+		int[] nums2 = { 20, 23, 45, 35, 28, 24, 30 };
+		int[] nums3 = new int[nums.length + nums2.length];
+		System.arraycopy(nums, 0, nums3, 0, nums2.length);
+		System.arraycopy(nums2, 0, nums3, nums.length, nums2.length);
+		for (int i = 1; i < nums3.length; i++)
+			for (int j = i; j > 0; j--) {
+				if (nums3[j - 1] > nums3[j]) {
+					int temp = nums3[j];
+					nums3[j] = nums3[j - 1];
+					nums3[j - 1] = temp;
+				}
+			}
+		return nums3;
+	}
+
+	public static void printResult(int[] results) {
+		System.out.println(Arrays.toString(results));
+	}
+}
+
+3.
+import java.util.Arrays;
+
+public class HelloWorld {
+	public static void main(String[] args) {
 		int[] nums = { 2, 7, 8, 16, 9, 1, 6 };
 		int[] results;
 		results = metod(nums);
@@ -13,18 +46,18 @@ public class HelloWorld {
 
 	public static int[] metod(int[] nums) {
 		for (int i = 0; i < nums.length; i++) {
-			int min = nums[i];
-			int min_index = i;
+			int max = nums[i];
+			int max_index = i;
 			for (int j = i + 1; j < nums.length; j++) {
-				if (nums[j] < min) {
-					min = nums[j];
-					min_index = j;
+				if (nums[j] > max) {
+					max = nums[j];
+					max_index = j;
 				}
 			}
-			if (i != min_index) {
+			if (i != max_index) {
 				int a = nums[i];
-				nums[i] = nums[min_index];
-				nums[min_index] = a;
+				nums[i] = nums[max_index];
+				nums[max_index] = a;
 			}
 		}
 		return nums;
@@ -34,7 +67,7 @@ public class HelloWorld {
 		System.out.println(Arrays.toString(results));
 	}
 }
-3.
+4.
 import java.util.Arrays;
 
 public class HelloWorld {
