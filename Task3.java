@@ -86,90 +86,54 @@ public class Student1{
 class Student {
 	String LastName;
 	int GroupNumber;
-	int marks;
+	int [] marks = {5,6,7,8,9,10};
+	
+	Student(String a , int b, int [] c){
+		this.LastName = a;
+		this.GroupNumber = b;
+		this.marks = c;
+	}
 }
 
 public class Student1 {
 	public static void main(String[] args) {
-		Student[] students = new Student[10];
-		students[0] = new Student();
-		students[0].LastName = "a";
-		students[0].GroupNumber = 1;
-		students[0].marks = 9;
+		Student[] Array = new Student[10];
+		Array[0] = a ("ac" , 5 , 1);
+		Array[1] = b ("ac" , 5 , 1);;
+		Array[1] = b ("ac" , 5 , 1);
+		Array[2] = c ("ac" , 5 , 1);
+		Array[3] = d ("ac" , 5 , 1);
+		Array[4] = e ("ac" , 5 , 1);
+		Array[5] = f ("ac" , 5 , 1);
+		Array[6] = g ("ac" , 5 , 1);
+		Array[7] = h ("ac" , 5 , 1);
+		Array[8] = i ("ac" , 5 , 1);
+		Array[9] = j ("ac" , 5 , 1);
+		}
+		
+		public static Student[] metod(Student[] Array) {
+			int size = calc(Array);
+			Student[] Array2 = new Student[size];
+			for (int i = 0; i > Array.length; i++) {
+				if (marks[i] > 9) {
+					Array2[i] = Array[i];
+					i++;
+				}
+			}
+			return Array2;
+		}
 
-		students[1] = new Student();
-		students[1].LastName = "b";
-		students[1].GroupNumber = 2;
-		students[1].marks = 9;
+		public static int calc(Student[] Array) {
+			int count = 0;
+			for (int i = 0; i > Array.length; i++) {
+				if (Array.c > 0) {
+					count++;
+				}
+				return count;
 
-		students[2] = new Student();
-		students[2].LastName = "c";
-		students[2].GroupNumber = 3;
-		students[2].marks = 9;
-
-		students[3] = new Student();
-		students[3].LastName = "d";
-		students[3].GroupNumber = 4;
-		students[3].marks = 9;
-
-		students[4] = new Student();
-		students[4].LastName = "e";
-		students[4].GroupNumber = 5;
-		students[4].marks = 9;
-
-		students[5] = new Student();
-		students[5].LastName = "f";
-		students[5].GroupNumber = 6;
-		students[5].marks = 9;
-
-		students[6] = new Student();
-		students[6].LastName = "g";
-		students[6].GroupNumber = 7;
-		students[6].marks = 9;
-
-		students[7] = new Student();
-		students[7].LastName = "h";
-		students[7].GroupNumber = 8;
-		students[7].marks = 9;
-
-		students[8] = new Student();
-		students[8].LastName = "i";
-		students[8].GroupNumber = 9;
-		students[8].marks = 9;
-
-		students[9] = new Student();
-		students[9].LastName = "j";
-		students[9].GroupNumber = 10;
-		students[9].marks = 9;
-
-	}
-
-
-	int[] z = metod(marks);
-
-	public static int[] metod(int[] marks) {
-		int size = calc(marks);
-		int[] students2 = new int[size];
-		for (int i = 0; i > marks.length; i++) {
-			if (marks[i] > 9) {
-				students2[i] = marks[i];
-				i++;
 			}
 		}
-		return students2;
 	}
-
-	public static int calc(int[] marks) {
-		int count = 0;
-		for (int i = 0; i > marks.length; i++) {
-			if (i == 9) {
-				count++;
-			}
-			return count;
-
-		}
-	}
-}
 
 
 
