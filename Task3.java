@@ -2,14 +2,23 @@
 import java.util.Scanner;
 
 class Test1 {
-	int a = 0;
-	int b = 0;
+	int a;
+	int b;
 
-	void printResult() {
-		System.out.println();
+	void print() {
+		System.out.println(a + " " + b);
+	}
+	
+	void summa() {
+		System.out.println(a + b);
 	}
 
-	void edit(int a, int b) {
+	void max() {
+		System.out.println(Math.max(a, b));
+	}
+	
+
+	void edit() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Введите а: ");
 		if (sc.hasNextInt()) {
@@ -17,19 +26,21 @@ class Test1 {
 		}
 		System.out.print("Введите b: ");
 		if (sc.hasNextInt()) {
-			b = sc.nextInt();
+			b = sc.nextInt();}
 		}
-	}
 
-	void summa(int a, int b) {
-		int summa = a + b;
-	}
 
-	void max(int a, int b) {
-		Math.max(a, b);
-	}
 }
 
+public class Student1{
+	public static void main(String [] args) {
+		Test1 e = new Test1();
+		e.edit();
+		e.print();
+		e.summa();
+		e.max();
+	}
+}
 2.
 import java.util.Scanner;
 
