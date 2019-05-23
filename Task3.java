@@ -86,36 +86,41 @@ public class Student1{
 class Student {
 	String LastName;
 	int GroupNumber;
-	int [] marks = {5,6,7,8,9,10};
+	int marks;
 	
-	Student(String a , int b, int [] c){
+	Student(String a , int b, int c){
 		this.LastName = a;
 		this.GroupNumber = b;
 		this.marks = c;
+	}
+	
+	public int getMarks() {
+		return marks;
 	}
 }
 
 public class Student1 {
 	public static void main(String[] args) {
 		Student[] Array = new Student[10];
-		Array[0] = a ("ac" , 5 , 1);
-		Array[1] = b ("ac" , 5 , 1);;
-		Array[1] = b ("ac" , 5 , 1);
-		Array[2] = c ("ac" , 5 , 1);
-		Array[3] = d ("ac" , 5 , 1);
-		Array[4] = e ("ac" , 5 , 1);
-		Array[5] = f ("ac" , 5 , 1);
-		Array[6] = g ("ac" , 5 , 1);
-		Array[7] = h ("ac" , 5 , 1);
-		Array[8] = i ("ac" , 5 , 1);
-		Array[9] = j ("ac" , 5 , 1);
+		Array[0] = new Student("ac" , 5 , 10) ;
+		Array[1] = new Student ("ac" , 5 , 1);
+		Array[1] = new Student ("ac" , 5 , 1);
+		Array[2] = new Student ("ac" , 5 , 1);
+		Array[3] = new Student ("ac" , 5 , 1);
+		Array[4] = new Student ("ac" , 5 , 1);
+		Array[5] = new Student ("ac" , 5 , 1);
+		Array[6] = new Student ("ac" , 5 , 1);
+		Array[7] = new Student ("ac" , 5 , 1);
+		Array[8] = new Student ("ac" , 5 , 1);
+		Array[9] = new Student ("ac" , 5 , 1);
 		}
 		
 		public static Student[] metod(Student[] Array) {
 			int size = calc(Array);
+			int a = Array.getMarks();
 			Student[] Array2 = new Student[size];
 			for (int i = 0; i > Array.length; i++) {
-				if (marks[i] > 9) {
+				if (a > 0) {
 					Array2[i] = Array[i];
 					i++;
 				}
@@ -125,8 +130,9 @@ public class Student1 {
 
 		public static int calc(Student[] Array) {
 			int count = 0;
+			int a = Array.getMarks;
 			for (int i = 0; i > Array.length; i++) {
-				if (Array.c > 0) {
+				if (a > 0) {
 					count++;
 				}
 				return count;
