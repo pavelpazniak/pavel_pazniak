@@ -41,28 +41,20 @@ public class Student1{
 		e.max();
 	}
 }
-2.
-import java.util.Scanner;
 
+
+2.
 class Test2 {
 	int a;
 	int b;
 
-	void edit(int a, int b) {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Введите а: ");
-		if (sc.hasNextInt()) {
-			a = sc.nextInt();
-		}
-		System.out.print("Введите b: ");
-		if (sc.hasNextInt()) {
-			b = sc.nextInt();
-		}
+	Test2() {
+
 	}
 
 	Test2(int a, int b) {
-		a = 0;
-		b = 0;
+		this.a = 5;
+		this.b = 0;
 	}
 
 	int getA() {
@@ -73,13 +65,22 @@ class Test2 {
 		return b;
 	}
 
-	int setA(int c) {
-		int a = c;
+	void setA(int c) {
+		this.a = c;
 	}
 
-	int setB(int d) {
-		int b = d;
+	void setB(int d) {
+		this.b = d;
+	}}
+
+public class Student1{
+	public static void main(String[]args) {
+		Test2 z = new Test2(5,6);
+		z.setA(9);
+		System.out.println(z.getA());
 	}
+}
+
 
 3.
 class Student {
