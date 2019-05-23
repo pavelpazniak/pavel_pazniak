@@ -144,39 +144,62 @@ public class Student1 {
 
 
 4.
+import java.util.Scanner;
+
 class Train {
 	String destination;
 	String time;
 	int number;
+	
+	Train (String a , String b , int c){
+		this.destination = a;
+		this.time = b;
+		this.number = c;
+	}
+	
+	void info (){
+		int a;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Введите а: ");
+		if (sc.hasNextInt()) {
+			a = sc.nextInt();
+		}
+		System.out.println();
+	}
+		
+	int [] sort (int [] nums){
+		for (int i = 0; i < nums.length; i++) {
+			int max = nums[i];
+			int max_index = i;
+			for (int j = i + 1; j < nums.length; j++) {
+				if (nums[j] > max) {
+					max = nums[j];
+					max_index = j;
+				}
+			}
+			if (i != max_index) {
+				int a = nums[i];
+				nums[i] = nums[max_index];
+				nums[max_index] = a;
+			}
+		}
+		return nums;
+	}
 }
 
- class sadsasd{
+ public class Student1{
+	 public static void main(String [] args) {
+			Train[] trains = new Train[5];
+			trains[0] = new Train("a" , "15:00" , 1);
+			trains[1] = new Train("b" , "16:00" , 2);
+			trains[2] = new Train("c" , "17:00" , 3);
+			trains[3] = new Train("d" , "18:00" , 4);
+			trains[4] = new Train("e" , "19:00" , 5);
+			
+			trains.info();
+	 }
+		
 
-		Train[] schedule = new Train[5];
-		schedule[0] = new Train();
-		schedule[0].destination = "a";
-		schedule[0].time = "10:00";
-		schedule[0].number = 1;
-
-		schedule[1] = new Train();
-		schedule[1].destination = "b";
-		schedule[1].time = "11:00";
-		schedule[1].number = 2;
-
-		schedule[2] = new Train();
-		schedule[2].destination = "c";
-		schedule[2].time = "12:00";
-		schedule[2].number = 3;
-
-		schedule[3] = new Train();
-		schedule[3].destination = "d";
-		schedule[3].time = "13:00";
-		schedule[3].number = 4;
-
-		schedule[4] = new Train();
-		schedule[4].destination = "e";
-		schedule[4].time = "14:00";
-		schedule[4].number = 5;
 
 5.
 6.
