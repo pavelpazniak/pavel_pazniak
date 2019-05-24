@@ -8,7 +8,7 @@ class Test1 {
 	void print() {
 		System.out.println(a + " " + b);
 	}
-	
+
 	void summa() {
 		System.out.println(a + b);
 	}
@@ -16,7 +16,6 @@ class Test1 {
 	void max() {
 		System.out.println(Math.max(a, b));
 	}
-	
 
 	void edit() {
 		Scanner sc = new Scanner(System.in);
@@ -26,14 +25,14 @@ class Test1 {
 		}
 		System.out.print("Введите b: ");
 		if (sc.hasNextInt()) {
-			b = sc.nextInt();}
+			b = sc.nextInt();
 		}
-
+	}
 
 }
 
-public class Student1{
-	public static void main(String [] args) {
+public class Student1 {
+	public static void main(String[] args) {
 		Test1 e = new Test1();
 		e.edit();
 		e.print();
@@ -41,6 +40,7 @@ public class Student1{
 		e.max();
 	}
 }
+
 
 
 2.
@@ -71,11 +71,12 @@ class Test2 {
 
 	void setB(int d) {
 		this.b = d;
-	}}
+	}
+}
 
-public class Student1{
-	public static void main(String[]args) {
-		Test2 z = new Test2(5,6);
+public class Student1 {
+	public static void main(String[] args) {
+		Test2 z = new Test2(5, 6);
 		z.setA(9);
 		System.out.println(z.getA());
 	}
@@ -87,13 +88,13 @@ class Student {
 	String LastName;
 	int GroupNumber;
 	int marks;
-	
-	Student(String a , int b, int c){
+
+	Student(String a, int b, int c) {
 		this.LastName = a;
 		this.GroupNumber = b;
 		this.marks = c;
 	}
-	
+
 	public int getMarks() {
 		return marks;
 	}
@@ -102,45 +103,44 @@ class Student {
 public class Student1 {
 	public static void main(String[] args) {
 		Student[] Array = new Student[10];
-		Array[0] = new Student("ac" , 5 , 10) ;
-		Array[1] = new Student ("ac" , 5 , 1);
-		Array[1] = new Student ("ac" , 5 , 1);
-		Array[2] = new Student ("ac" , 5 , 1);
-		Array[3] = new Student ("ac" , 5 , 1);
-		Array[4] = new Student ("ac" , 5 , 1);
-		Array[5] = new Student ("ac" , 5 , 1);
-		Array[6] = new Student ("ac" , 5 , 1);
-		Array[7] = new Student ("ac" , 5 , 1);
-		Array[8] = new Student ("ac" , 5 , 1);
-		Array[9] = new Student ("ac" , 5 , 1);
-		}
-		
-		public static Student[] metod(Student[] Array) {
-			int size = calc(Array);
-			int a = Array.getMarks();
-			Student[] Array2 = new Student[size];
-			for (int i = 0; i > Array.length; i++) {
-				if (a > 0) {
-					Array2[i] = Array[i];
-					i++;
-				}
-			}
-			return Array2;
-		}
-
-		public static int calc(Student[] Array) {
-			int count = 0;
-			int a = Array.getMarks;
-			for (int i = 0; i > Array.length; i++) {
-				if (a > 0) {
-					count++;
-				}
-				return count;
-
-			}
-		}
+		Array[0] = new Student("ac", 5, 10);
+		Array[1] = new Student("ac", 5, 1);
+		Array[1] = new Student("ac", 5, 1);
+		Array[2] = new Student("ac", 5, 1);
+		Array[3] = new Student("ac", 5, 1);
+		Array[4] = new Student("ac", 5, 1);
+		Array[5] = new Student("ac", 5, 1);
+		Array[6] = new Student("ac", 5, 1);
+		Array[7] = new Student("ac", 5, 1);
+		Array[8] = new Student("ac", 5, 1);
+		Array[9] = new Student("ac", 5, 1);
 	}
 
+	public static Student[] metod(Student[] Array) {
+		int size = calc(Array);
+		int a = Array.getMarks();
+		Student[] Array2 = new Student[size];
+		for (int i = 0; i > Array.length; i++) {
+			if (a > 0) {
+				Array2[i] = Array[i];
+				i++;
+			}
+		}
+		return Array2;
+	}
+
+	public static int calc(Student[] Array) {
+		int count = 0;
+		int a = Array.getMarks;
+		for (int i = 0; i > Array.length; i++) {
+			if (a > 0) {
+				count++;
+			}
+			return count;
+
+		}
+	}
+}
 
 
 4.
@@ -150,14 +150,14 @@ class Train {
 	String destination;
 	String time;
 	int number;
-	
-	Train (String a , String b , int c){
+
+	Train(String a, String b, int c) {
 		this.destination = a;
 		this.time = b;
 		this.number = c;
 	}
-	
-	void info (){
+
+	void info() {
 		int a;
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Введите а: ");
@@ -166,8 +166,8 @@ class Train {
 		}
 		System.out.println();
 	}
-		
-	int [] sort (int [] nums){
+
+	int[] sort(int[] nums) {
 		for (int i = 0; i < nums.length; i++) {
 			int max = nums[i];
 			int max_index = i;
@@ -187,8 +187,8 @@ class Train {
 	}
 }
 
- public class Student1{
-	 public static void main(String [] args) {
+public class Student1 {
+	public static void main(String [] args) {
 			Train[] trains = new Train[5];
 			trains[0] = new Train("a" , "15:00" , 1);
 			trains[1] = new Train("b" , "16:00" , 2);
@@ -198,46 +198,47 @@ class Train {
 			
 			trains.info();
 	 }
-		
 
 
-5.
-6.
+
 7.
 class Triangle {
-    int Fa; // первый катет
-    int Fb; // второй катет
-    int Fc; // гипотенуза
-    double S; // площадь
-    double P; // периметр
-    public Triangle(int a, int b, int c){
-        Fa = a;
-        Fb = b;
-        Fc = c;
-    }
-    double getP(){
-        P = Fa + Fb + Fc;
-        return P;
-    }
-    double getS(){
-        int p, x;
-        p = (int) (P/2);
-        x = p*(p-Fa)*(p-Fb)*(p-Fc);
-        S = Math.sqrt(x);
-        return S;
-    }
+	int Fa; // первый катет
+	int Fb; // второй катет
+	int Fc; // гипотенуза
+	double S; // площадь
+	double P; // периметр
+
+	public Triangle(int a, int b, int c) {
+		Fa = a;
+		Fb = b;
+		Fc = c;
+	}
+
+	double getP() {
+		P = Fa + Fb + Fc;
+		return P;
+	}
+
+	double getS() {
+		int p, x;
+		p = (int) (P / 2);
+		x = p * (p - Fa) * (p - Fb) * (p - Fc);
+		S = Math.sqrt(x);
+		return S;
+	}
 }
 
 public class sadsasd {
-    public static void main(String[] args){
-        Triangle trng = new Triangle(7,8,4);
-        double y,z;
-        y = trng.getP();
-        z = trng.getS();
-        System.out.println(y);
-        System.out.println(z);
-                        
-    }
+	public static void main(String[] args) {
+		Triangle trng = new Triangle(7, 8, 4);
+		double y, z;
+		y = trng.getP();
+		z = trng.getS();
+		System.out.println(y);
+		System.out.println(z);
+
+	}
 }
 
 
