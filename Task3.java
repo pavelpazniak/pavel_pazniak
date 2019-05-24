@@ -347,3 +347,56 @@ public class sadsasd {
 		}
 	}
 }
+
+10.
+import java.util.Scanner;
+
+class Airline {
+	int number;
+	String destination;
+	String type;
+	String time;
+	String days;
+
+	Airline(int a, String b, String c, String d, String e) {
+		this.number = a;
+		this.destination = b;
+		this.type = c;
+		this.time = d;
+		this.days = e;
+	}
+
+	@Override
+	public String toString() {
+		return this.number + " " + this.destination + " " + this.type + " " + this.time + " " + this.days;
+	}
+
+	void destination() {
+		if (destination == this.destination) {
+			System.out.println(toString());
+		}
+	}
+
+	void typeDestination() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Введите destination: ");
+		if (sc.hasNext(this.destination)) {
+			this.destination = sc.next();
+		} else
+			System.out.println("error");
+	}
+}
+
+public class sadsasd {
+	public static void main(String[] args) {
+		Airline[] planes = new Airline[3];
+		planes[0] = new Airline(1, "Minsk", "big", "15:00", "monday");
+		planes[1] = new Airline(2, "London", "small", "16:00", "friday");
+		planes[2] = new Airline(3, "Paris", "medium", "17:00", "saturday");
+
+		for (int i = 0; i < planes.length; i++) {
+			planes[i].typeDestination();
+			planes[i].destination();
+		}
+	}
+}
