@@ -244,49 +244,46 @@ public class sadsasd {
 
 8.
 class Customer {
-    int id; // ID клиента
-    String Name; // имя
-    String Surname; // фамилия
-    String Address; // адрес
-    int cc; // номер карточки 
-    int bank;//номер банковского счета
-    
-    Customer (int a , String b, String c, String d, int e, int f){
-    	this.id = a;
-    	this.Name = b;
-    	this.Surname = c;
-    	this.Address = d;
-    	this.cc = e;
-    	this.bank = f;
-    }
-    
-    void getList(){
-        System.out.println(id);
-    }
-    
-    void getCC() {
-    	
-        	
-        }
-    }
+	int id; // ID клиента
+	String Name; // имя
+	String Surname; // фамилия
+	String Address; // адрес
+	int cc; // номер карточки
+	int bank;// номер банковского счета
 
+	Customer(int a, String b, String c, String d, int e, int f) {
+		this.id = a;
+		this.Name = b;
+		this.Surname = c;
+		this.Address = d;
+		this.cc = e;
+		this.bank = f;
+	}
 
-public class sadsasd {
-    public static void main(String[] args){
-		Customer xxx = new Customer(111,"aaa","ccc","ddd",222,333);
-		Customer yyy = new Customer(111,"aaa","ccc","ddd",222,333);
-		Customer zzz = new Customer(111,"aaa","ccc","ddd",222,333);
-    	
+	@Override
+	public String toString() {
+		return this.id + " " + this.Name + " " + this.Surname + " " + this.Address + " " + this.cc + " " + this.bank;
+	}
 
-    	int y,z;
-        y = customers.getList();
-        z = customers.getCC;
-        System.out.println(y);
-        System.out.println(z);
-                        
-    }
+	void getCC() {
+
+	}
 }
 
+public class sadsasd {
+	public static void main(String[] args) {
+		Customer[] all = new Customer[5];
+		all[0] = new Customer(1, "a", "b", "c", 2, 3);
+		all[1] = new Customer(2, "b", "b", "c", 2, 3);
+		all[2] = new Customer(3, "c", "b", "c", 2, 3);
+		all[3] = new Customer(4, "d", "b", "c", 2, 3);
+		all[4] = new Customer(5, "e", "b", "c", 2, 3);
+
+		String y = all[0].toString();
+		System.out.println(y);
+
+	}
+}
 
 9.
 
