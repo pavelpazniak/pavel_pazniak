@@ -321,9 +321,8 @@ class Book {
 	}
 
 	void author() {
-		String d = null;
-		if (d == Author)
-			System.out.println(d);
+		if (Author == this.Author) {
+			System.out.println(toString());}
 	}
 
 	void edit() {
@@ -334,24 +333,17 @@ class Book {
 		}
 	}
 
-	void editor() {
-
-	}
-
-	void year() {
-
-	}
 }
-
 public class sadsasd {
 	public static void main(String[] args) {
 		Book[] books = new Book[3];
 		books[0] = new Book(111, "aaa", "ccc", "ddd", 222, 333, 444, 555);
-		books[1] = new Book(111, "aaa", "ccc", "ddd", 222, 333, 444, 555);
-		books[2] = new Book(111, "aaa", "ccc", "ddd", 222, 333, 444, 555);
-
-		String y;
-		int i = 0;
-		books[i].edit();
+		books[1] = new Book(111, "aaa", "ccc", "sss", 222, 333, 444, 555);
+		books[2] = new Book(111, "aaa", "ccc", "zzz", 222, 333, 444, 555);
+		
+		for (int i = 0; i < books.length;i++) {
+			books[i].edit();
+			books[i].author();
+		}
 	}
 }
