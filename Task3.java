@@ -287,57 +287,67 @@ public class sadsasd {
 
 9.
 
+import java.util.Scanner;
+
 class Book {
-    int id; // ID книги
-    String Name; // название
-    String Editor; // издательство
-    String Author; // автор
-    int year; // год 
-    int pages;//количество страниц
-    int price; // цена
-    int type;//тип переплета
-    
-    Book (int a , String b, String c, String d, int e, int f, int g, int h){
-    	this.id = a;
-    	this.Name = b;
-    	this.Editor = c;
-    	this.Author = d;
-    	this.year = e;
-    	this.pages = f;
-    	this.price = g;
-    	this.type = h;
-    }
-    
-    void author(){
-        System.out.println(id);
-    }
-    
-    void editor() {
-    	
-    }
-    void year() {
-    	
-        	
-        }
-    }
+	int id; // ID книги
+	String Name; // название
+	String Editor; // издательство
+	String Author; // автор
+	int year; // год
+	int pages;// количество страниц
+	int price; // цена
+	int type;// тип переплета
 
+	Book(int a, String b, String c, String d, int e, int f, int g, int h) {
+		this.id = a;
+		this.Name = b;
+		this.Editor = c;
+		this.Author = d;
+		this.year = e;
+		this.pages = f;
+		this.price = g;
+		this.type = h;
+	}
 
-public class sadsasd {
-    public static void main(String[] args){
-    	Book [] books = new Book[3];
-		books [0] = new Book(111,"aaa","ccc","ddd",222,333,444,555);
-		books [1] = new Book(111,"aaa","ccc","ddd",222,333,444,555);
-		books [2] = new Book(111,"aaa","ccc","ddd",222,333,444,555);
+	@Override
+	public String toString() {
+		return this.id + " " + this.Name + " " + this.Editor + " " + this.Author + " " + this.year + " " + this.pages
+				+ " " + this.price + " " + this.type;
+	}
 
-    	int y,z,x;
-        y = books.author();
-        z = books.editor();
-        x = books.year()
-        		
-        System.out.println(y);
-        System.out.println(z);
-        System.out.println(x);
-                        
-    }
+	void author() {
+		String d = null;
+		if (d == Author)
+			System.out.println(d);
+	}
+
+	void edit() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Введите Author: ");
+		if (sc.hasNext()) {
+			Author = sc.next();
+		}
+	}
+
+	void editor() {
+
+	}
+
+	void year() {
+
+	}
 }
 
+public class sadsasd {
+	public static void main(String[] args) {
+		Book[] books = new Book[3];
+		books[0] = new Book(111, "aaa", "ccc", "ddd", 222, 333, 444, 555);
+		books[1] = new Book(111, "aaa", "ccc", "ddd", 222, 333, 444, 555);
+		books[2] = new Book(111, "aaa", "ccc", "ddd", 222, 333, 444, 555);
+
+		String y;
+		int i = 0;
+		books[i].edit();
+	}
+}
