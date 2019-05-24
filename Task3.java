@@ -265,23 +265,27 @@ class Customer {
 		return this.id + " " + this.Name + " " + this.Surname + " " + this.Address + " " + this.cc + " " + this.bank;
 	}
 
-	void getCC() {
-
+	int getCC() {
+		if (cc < 4) {
+			System.out.println(cc);
+		}
+		return cc;
 	}
 }
 
 public class sadsasd {
 	public static void main(String[] args) {
 		Customer[] all = new Customer[5];
-		all[0] = new Customer(1, "a", "b", "c", 2, 3);
-		all[1] = new Customer(2, "b", "b", "c", 2, 3);
+		all[0] = new Customer(1, "a", "b", "c", 0, 3);
+		all[1] = new Customer(2, "b", "b", "c", 1, 3);
 		all[2] = new Customer(3, "c", "b", "c", 2, 3);
-		all[3] = new Customer(4, "d", "b", "c", 2, 3);
-		all[4] = new Customer(5, "e", "b", "c", 2, 3);
+		all[3] = new Customer(4, "d", "b", "c", 3, 3);
+		all[4] = new Customer(5, "e", "b", "c", 6, 3);
 
-		String y = all[0].toString();
-		System.out.println(y);
-
+		for (int i = 0; i < all.length; i++) {
+			all[i].getCC();
+			all[i].toString();
+		}
 	}
 }
 
