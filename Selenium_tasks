@@ -24,3 +24,44 @@ public class HelloWeb {
 		driver.quit();
 	}
 }
+
+
+2.
+import java.util.concurrent.TimeUnit;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import junit.framework.Assert;
+
+public class HelloWeb {
+	public static void main(String[] args) throws InterruptedException{
+		String code = "git config --global user.name  \"New Sheriff in Town\"\r\n" +
+				"git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\r\n" +
+				"git push origin master --force";
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://pastebin.com ");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		WebElement newpaste = driver.findElement(By.xpath("//*[@id='paste_code']"));
+		newpaste.sendKeys(code);
+		WebElement dropdown = driver.findElement(By.xpath("//*[@class='select2-selection__arrow']"));
+		dropdown.click();
+		WebElement selection = driver.findElement(By.xpath("//*[text() = 'Bash']"));
+		selection.click();
+		WebElement dropdown2 = driver.findElement(By.xpath("//*[@class='select2-selection__arrow']"));
+		dropdown2.click();
+		WebElement selection2 = driver.findElement(By.xpath("//*[text() = '10 Minutes']"));
+		selection2.click();
+		WebElement name = driver.findElement(By.xpath("//input[@name='paste_name']"));
+		name.sendKeys("how to gain dominance among developers");
+		WebElement submit = driver.findElement(By.xpath("//*[@id='submit']"));
+		submit.click();
+		String expected = "how to gain dominance among developers";
+		String real = driver.getTitle();
+		Assert.assertTrue(real.contains(expected));
+		String real1 = driver.findElement(By.xpath("//*[@id='paste_code']")).getText();	
+		Assert.assertTrue(real1.contains(code));
+	}
+}
