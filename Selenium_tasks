@@ -62,6 +62,8 @@ public class HelloWeb {
 		String real = driver.getTitle();
 		Assert.assertTrue(real.contains(expected));
 		String real1 = driver.findElement(By.xpath("//*[@id='paste_code']")).getText();	
+		String real2 = driver.findElement(By.xpath("//*[@class='bash']")).getText();
 		Assert.assertTrue(real1.contains(code));
+		Assert.assertTrue(real2.contains(code));
 	}
 }
