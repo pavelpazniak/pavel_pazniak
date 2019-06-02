@@ -1,0 +1,25 @@
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class HelloWeb {
+	public static void main(String[] args) throws InterruptedException{
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://pastebin.com ");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		WebElement newpaste = driver.findElement(By.xpath("//*[@id='paste_code']"));
+		newpaste.sendKeys("Hello from WebDriver");
+		WebElement dropdown = driver.findElement(By.xpath("//*[@class='select2-selection__arrow']"));
+		dropdown.click();
+		WebElement selection = driver.findElement(By.xpath("//*[text() = '10 Minutes']"));
+		selection.click();
+		WebElement name = driver.findElement(By.xpath("//input[@name='paste_name']"));
+		name.sendKeys("helloweb");
+		WebElement submit = driver.findElement(By.xpath("//*[@id='submit']"));
+		submit.click();
+		driver.quit();
+	}
+}
