@@ -146,3 +146,85 @@ public class HelloWeb {
 		driver.quit();
 	}
 }
+
+
+4.
+import java.util.concurrent.TimeUnit;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import junit.framework.Assert;
+
+public class HelloWeb {
+	public static void main(String[] args) throws InterruptedException{
+		WebDriver driver = new ChromeDriver();
+		driver.get(" https://cloud.google.com/ ");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		WebElement pricing = driver.findElement(By.xpath("//*[@id='top_of_page']/div[1]/div[1]/header/div[1]/div/div/div[2]/nav/ul/li[5]/a"));
+		pricing.click();
+		WebElement calculator = driver.findElement(By.xpath("//*[@id='top_of_page']/div[1]/div[1]/header/div[1]/div/div/div[2]/nav/ul/li[5]/div/div/div[2]/ul/li[4]/a"));
+		calculator.click();
+		WebElement engine = driver.findElement(By.id("//input[@id='input-0']"));
+		engine.click();
+		WebElement engine2 = driver.findElement(By.xpath("//*[text() = 'Compute Engine']"));
+		engine2.click();
+		WebElement quantity = driver.findElement(By.xpath("//*[@name='quantity']"));
+		quantity.sendKeys("4");
+		WebElement instance = driver.findElement(By.xpath("//*[@id='input_52']"));
+		instance.sendKeys("");
+		WebElement software = driver.findElement(By.xpath("//*[@id='select_value_label_44']"));
+		software.click();
+		WebElement software2 = driver.findElement(By.xpath("//*[text() = 'Free: Debian, CentOS, CoreOS, Ubuntu, or other User Provided OS']"));
+		software2.click();
+		WebElement machine = driver.findElement(By.xpath("//*[@id='select_67']"));
+		machine.click();
+		WebElement machine2 = driver.findElement(By.xpath("//*[text() = 'Regular']"));
+		machine2.click();
+		WebElement machineType = driver.findElement(By.xpath("//*[@id='select_74']"));
+		machineType.click();
+		WebElement machineType2 = driver.findElement(By.xpath("//*[text() = 'n1-standard-8    (vCPUs: 8, RAM: 30 GB)']"));
+		machineType2.click();
+		WebElement addGpus = driver.findElement(By.xpath("//*[@id='mainForm']/div[1]/div/md-card/md-card-content/div/div[1]/form/div[7]/div[1]/md-input-container/md-checkbox		\r\n" + 
+				""));
+		addGpus.click();
+		WebElement numberGpus = driver.findElement(By.xpath("//*[@id='select_395']"));
+		numberGpus.click();
+		WebElement numberGpus2 = driver.findElement(By.xpath("//*[text() = '1']"));
+		numberGpus2.click();
+		WebElement typeGpu = driver.findElement(By.xpath("//*[@id='select_397']"));
+		typeGpu.click();
+		WebElement typeGpu2 = driver.findElement(By.xpath("//*[text() = 'NVIDIA Tesla V100']"));
+		typeGpu2.click();
+		WebElement localSSD = driver.findElement(By.xpath("//*[@id='select_76']"));
+		localSSD.click();
+		WebElement localSSD2 = driver.findElement(By.xpath("//*[text() = '2x375 Gb']"));
+		localSSD2.click();
+		WebElement location = driver.findElement(By.xpath("//*[@id='select_78']"));
+		location.click();
+		WebElement location2 = driver.findElement(By.xpath("//*[text() = 'Frankfurt (europe-west3)']"));
+		location2.click();
+		WebElement usage = driver.findElement(By.xpath("//*[@id='select_83']"));
+		usage.click();
+		WebElement usage2 = driver.findElement(By.xpath("//*[text() = '1 Year']"));
+		usage2.click();
+		WebElement estimate = driver.findElement(By.xpath("//*[@class=\"md-raised md-primary cpc-button md-button md-ink-ripple\"]"));
+		estimate.click();
+		WebElement email = driver.findElement(By.xpath("//*[@id='email_quote']"));
+		email.click();
+		String winHandleBefore = driver.getWindowHandle();
+		String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL,Keys.RETURN); 
+		driver.findElement(By.linkText(" https://10minutemail.com")).sendKeys(selectLinkOpeninNewTab);
+		String mail = driver.findElement(By.xpath("//*[@id='mailAddress']")).getText();
+		driver.close(); 
+		driver.switchTo().window(winHandleBefore);
+		WebElement emailField = driver.findElement(By.xpath("//*[@id='input_397']"));
+		emailField.sendKeys(mail);
+		WebElement send = driver.findElement(By.xpath("//*[@id='dialogContent_403']/form/md-dialog-actions/button[2]"));
+		send.click();
+		driver.quit();
+	}
+}
